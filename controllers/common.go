@@ -276,7 +276,7 @@ func (r *Reconciler) CompletedJobExists(ctx context.Context, instance client.Obj
 		return false
 	}
 
-	if job.Status.Succeeded > 0 || job.Status.Failed > 0 {
+	if job.Status.Succeeded > 0 && job.Status.Failed > 0 {
 		return true
 	}
 
